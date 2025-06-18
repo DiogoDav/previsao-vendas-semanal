@@ -1,5 +1,5 @@
 ###### Para rodar com interface do usuário ######
-!pip install gradio
+##!pip install gradio
 
 import gradio as gr
 
