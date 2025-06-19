@@ -22,9 +22,9 @@ def calcular_modelo(D_Location, Promotion, D_MarketSize):
 interface = gr.Interface(
     fn=calcular_modelo,
     inputs=[
-        gr.Number(label="Location"),
-        gr.Number(label="Promotion"),
-        gr.Number(label="MarketSize")
+        gr.Number(label="Location", minimum=1, maximum=10),
+        gr.Number(label="Promotion", minimum=1, maximum=3),
+        gr.Number(label="MarketSize", minimum=1, maximum=3)
     ],
     outputs=gr.Textbox(label="Previsão de Vendas na semana"),
     title="Modelo de Regressão Polinomial Múltipla",
