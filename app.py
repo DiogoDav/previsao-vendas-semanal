@@ -25,7 +25,7 @@ interface = gr.Interface(
     inputs=[
         gr.Number(label="Codigo Location 1 a 10", minimum=1, maximum=10),
         gr.Number(label="Promotion 1 a 3", minimum=1, maximum=3),
-        gr.Number(label="MarketSize", choices=["Small", "Medium", "Large"])  ],
+        gr.Dropdown(label="MarketSize", choices=["Small", "Medium", "Large"])  ],
     
     outputs=gr.Textbox(label="Previsão de Vendas na semana"),
     title="Modelo de Regressão Polinomial Múltipla",
