@@ -5,7 +5,7 @@ import gradio as gr
 
 # função de previsão com os coeficientes ajustados
 def calcular_modelo(D_Location, Promotion, D_MarketSize):
-    D_MarketSize = {"Small": 1, "Medium": 2, "Large": 3}[D_MarketSize_label]
+    D_MarketSize = {"Small": 1, "Medium": 2, "Large": 3}[D_MarketSize]
     resultado = (
         -35.7320441513142 +
         124.538140237919 * D_Location +
