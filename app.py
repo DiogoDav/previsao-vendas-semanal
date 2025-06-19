@@ -26,7 +26,7 @@ interface = gr.Interface(
         gr.Number(label="Promotion"),
         gr.Number(label="MarketSize")
     ],
-    outputs=gr.Textbox(label="Previsão de Vendas"),
+    outputs=gr.Textbox(label="Previsão de Vendas na semana"),
     title="Modelo de Regressão Polinomial Múltipla",
     description="Previsão de vendas semanais com base em localização, promoção e tamanho do mercado."
 )
