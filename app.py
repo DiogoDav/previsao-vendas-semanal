@@ -3,8 +3,9 @@
 
 import gradio as gr
 
-# Sua função de previsão com os coeficientes ajustados
+# função de previsão com os coeficientes ajustados
 def calcular_modelo(D_Location, Promotion, D_MarketSize):
+    D_MarketSize = {"Small": 1, "Medium": 2, "Large": 3}[D_MarketSize_label]
     resultado = (
         -35.7320441513142 +
         124.538140237919 * D_Location +
@@ -22,10 +23,10 @@ def calcular_modelo(D_Location, Promotion, D_MarketSize):
 interface = gr.Interface(
     fn=calcular_modelo,
     inputs=[
-        gr.Number(label="Location", minimum=1, maximum=10),
-        gr.Number(label="Promotion", minimum=1, maximum=3),
-        gr.Number(label="MarketSize", minimum=1, maximum=3)
-    ],
+        gr.Number(label="Codigo Location 1 a 10", minimum=1, maximum=10),
+        gr.Number(label="Promotion 1 a 3", minimum=1, maximum=3),
+        gr.Number(label="MarketSize", choices=["Small", "Medium", "Large"])  ],
+    
     outputs=gr.Textbox(label="Previsão de Vendas na semana"),
     title="Modelo de Regressão Polinomial Múltipla",
     description="Previsão de vendas semanais com base em localização, promoção e tamanho do mercado."
